@@ -2,9 +2,9 @@ name: Docker Image CI Extraction
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "pdf-content-extraction" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "pdf-content-extraction" ]
 
 # allow to run workflow manually
   workflow_dispatch:
