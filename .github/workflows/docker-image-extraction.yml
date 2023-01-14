@@ -31,8 +31,9 @@ jobs:
         
     - name: Build and push
       uses: docker/build-push-action@v3
+#       working-directory: docker
       with:
-        working-directory: docker
+        context: docker
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/sci-extraction:latest
 
