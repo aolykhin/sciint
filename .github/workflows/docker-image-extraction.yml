@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ "pdf-content-extraction" ]
 
-# allow to run workflow manually
-  workflow_dispatch:
+## allow to run workflow manually
+#  workflow_dispatch:
   
 jobs:
 
