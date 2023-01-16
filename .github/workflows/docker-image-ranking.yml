@@ -1,0 +1,32 @@
+name: Docker Image CI Ranking
+
+on:
+  push:
+    branches: [ "content-ranking" ]
+  pull_request:
+    branches: [ "content-ranking" ]
+
+## allow to run workflow manually
+  workflow_dispatch:
+  
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v3
+    
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        
+    - name: Build and push
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/sci-provenance:latest
