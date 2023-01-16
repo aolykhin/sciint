@@ -29,4 +29,4 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/sci-provenance:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/sci-ranking:latest
