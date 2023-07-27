@@ -51,12 +51,19 @@ else
      INPUT_DIR=$(realpath $(dirname "$INPUT_PDF_PATH"))
      INPUT_BASENAME=$(basename "$INPUT_PDF_PATH")
 
-    # Run docker
-    docker run --userns=host  --rm \
-    --user "$(id -u):$(id -g)" \
-    -e PDF="$INPUT_BASENAME" \
-    -v "$INPUT_DIR":/INPUT \
-    -v "$OUTPUT_PATH":/OUTPUT \
-    pdf-content-extraction
+#    # Run docker
+#    docker run --userns=host  --rm \
+#    --user "$(id -u):$(id -g)" \
+#    -e PDF="$INPUT_BASENAME" \
+#    -v "$INPUT_DIR":/INPUT \
+#    -v "$OUTPUT_PATH":/OUTPUT \
+#    pdf-content-extraction
+
+    # Run Singularity
+    singularity run  \
+    --env PDF="$INPUT_BASENAME" \
+    --bind "$INPUT_DIR":/INPUT \
+    --bind "$OUTPUT_PATH":/OUTPUT \
+    sci-extraction_latest.sif
 
 fi
