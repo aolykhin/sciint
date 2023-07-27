@@ -9,7 +9,7 @@ This dataset is available in the following project branch:
 * [SILA Dataset](https://git.io/JcZsX)
 
 *Disclaimer.*
-Each paper in the dataset is referred to by its public Digital Object Identifier (DOI).
+Each article in the dataset is referred to by its public Digital Object Identifier (DOI).
 Inclusion in the dataset does not necessarily signify that an article is the subject of any research misconduct practice, allegation, or proceeding.
 
 ## System Modules
