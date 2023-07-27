@@ -59,8 +59,8 @@ else
 #    -v "$OUTPUT_PATH":/OUTPUT \
 #    pdf-content-extraction
 
-    # Run Singularity
-    singularity run  \
+    # Run Apptainer
+    apptainer run  \
     --env PDF="$INPUT_BASENAME" \
     --bind "$INPUT_DIR":/INPUT \
     --bind "$OUTPUT_PATH":/OUTPUT \
